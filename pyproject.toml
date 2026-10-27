@@ -1,0 +1,29 @@
+[project]
+name = "piwankanobi"
+version = "0.3.0"
+description = "Raspberry Pi 5 + Hailo-10H 위에서 Qwen3-VL 챗봇 (NPU 추론)"
+authors = [{name = "gbox3d"}]
+readme = "README.md"
+requires-python = ">=3.11"
+
+# Hailo SDK는 네이티브 런타임·드라이버와 맞는 버전을 별도로 설치합니다.
+# 현재 .venv에는 hailort 5.4.0 wheel이 설치되어 있으며,
+# --system-site-packages로 시스템 OpenCV/NumPy를 함께 사용합니다.
+# 실행은 프로젝트 환경을 선택하는 ./run.sh를 사용합니다.
+dependencies = []
+
+[project.optional-dependencies]
+web = ["Flask>=3.1,<4", "gunicorn>=23,<24"]
+
+[project.scripts]
+piwankanobi = "piwankanobi.cli:run"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["piwankanobi"]
+
+[tool.setuptools.package-data]
+piwankanobi = ["static/*.html", "static/*.css", "static/*.js"]

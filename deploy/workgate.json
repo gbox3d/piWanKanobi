@@ -1,0 +1,19 @@
+{
+  "name": "piwankanobi",
+  "pm2": "piwankanobi",
+  "port": 3010,
+  "route": {"public": "/piwankanobi/", "upstream": "/"},
+  "health": "/api/health",
+  "expect": [200],
+  "version": {"path": "/api/version", "field": "version"},
+  "checkout": "/home/goback/works/piWanKanobi",
+  "ui": {
+    "group": "service",
+    "title": "PiWanKanobi",
+    "eyebrow": "Vision Chat",
+    "description": "이미지를 넣고 Qwen3에게 물어보세요. 다른 앱에서도 JSON-RPC API로 사용할 수 있습니다.",
+    "open": {"label": "이미지 채팅", "href": "/piwankanobi/"},
+    "links": [{"label": "RPC API 사용법", "href": "/piwankanobi/api/help"}],
+    "qr": true
+  }
+}

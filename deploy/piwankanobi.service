@@ -1,0 +1,17 @@
+[Unit]
+Description=piWanKanobi image chat and JSON-RPC API
+After=network.target
+
+[Service]
+Type=simple
+User=goback
+Group=goback
+WorkingDirectory=/home/goback/works/piWanKanobi
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/home/goback/works/piWanKanobi/run-web.sh
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=40
+
+[Install]
+WantedBy=multi-user.target

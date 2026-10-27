@@ -1,0 +1,23 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Hailo model weights (≥1 GB, downloaded separately)
+models/*.hef
+models/*.hef.tmp
+models/**/*.hef
+models/**/*.hef.tmp
+
+# HailoRT execution logs
+hailort.log
+
+# Local deployment checks and private runtime files
+localfiles/
+
